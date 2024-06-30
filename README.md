@@ -101,6 +101,6 @@ ip -6 route
 ## END
 - **Reference materials**
 
-> https://blog.arbjerg.dev/2020/3/tunnelbroker-with-lavalink#:~:text=Replace%20the%20/64%20prefix%20with%20the%20/48%20one%20you%20were%20allocated
-> https://blog.darrennathanael.com/series/ipv6/
-> https://github.com/AceAsin/Lavalink
+> 1. https://blog.arbjerg.dev/2020/3/tunnelbroker-with-lavalink#:~:text=Replace%20the%20/64%20prefix%20with%20the%20/48%20one%20you%20were%20allocated
+> 2. https://blog.darrennathanael.com/series/ipv6/
+> 3. https://github.com/AceAsin/Lavalink
