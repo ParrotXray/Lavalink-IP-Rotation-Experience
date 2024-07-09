@@ -23,13 +23,10 @@ sysctl -w net.ipv6.ip_nonlocal_bind=1
 echo 'net.ipv6.ip_nonlocal_bind = 1' >> /etc/sysctl.conf
 
 sysctl -w net.ipv6.conf.all.autoconf=0
-echo 'sysctl -w net.ipv6.conf.all.autoconf=0' >> /etc/sysctl.conf
+echo 'net.ipv6.conf.all.autoconf=0' >> /etc/sysctl.conf
 
 sysctl -w sysctl -w net.ipv6.conf.all.accept_ra=0
-echo 'sysctl -w net.ipv6.conf.all.accept_ra=0' >> /etc/sysctl.conf
-
-ip add add local <ipBlock ex. 2001:354:1df4::/48> dev lo
-ip -6 route replace local <ipBlock ex. 2001:354:1df4::/48> dev lo
+echo 'net.ipv6.conf.all.accept_ra=0' >> /etc/sysctl.conf
 ```
 - **Configure Network**
 > if use interfaces 
@@ -89,6 +86,13 @@ ip -6 route
 ```
 
 ## setup.4
+- **setting ipv6 route**
+```sh=
+ip add add local <ipBlock ex. 2001:354:1df4::/48> dev lo
+ip -6 route replace local <ipBlock ex. 2001:354:1df4::/48> dev lo
+```
+
+## setup.5
 - **Add the ratelimit block to your config**
 ```yml= 
     ratelimit:
