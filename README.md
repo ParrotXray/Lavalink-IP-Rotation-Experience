@@ -60,8 +60,14 @@ network:
         - '0:0:0::/48' # ex. 2001:354:1df4::/48
       gateway6: '0:0:0::1' # ex. 2001:354:1df4::1
 ```
-
 ## setup.3
+- **setting ipv6 route**
+```sh=
+ip add add local <ipBlock ex. 2001:354:1df4::/48> dev lo
+ip -6 route replace local <ipBlock ex. 2001:354:1df4::/48> dev lo
+```
+
+## setup.4
 - **Test your configuration**
 ```sh=
 # Test that IPv6 works in the first place
@@ -84,14 +90,6 @@ ip -6 route
 #fe80::/64 dev eth0 proto kernel metric 256 pref medium
 #default via 2001:470:cc7b::1 dev he-ipv6 proto static metric 1024 pref medium
 ```
-
-## setup.4
-- **setting ipv6 route**
-```sh=
-ip add add local <ipBlock ex. 2001:354:1df4::/48> dev lo
-ip -6 route replace local <ipBlock ex. 2001:354:1df4::/48> dev lo
-```
-
 ## setup.5
 - **Add the ratelimit block to your config**
 ```yml= 
